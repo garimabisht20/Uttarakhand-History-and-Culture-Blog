@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Uttarakhand History and Culture Blog</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <style>
+    /* Your custom CSS styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Header styles */
+    header {
+      background-color: #3f51b5;
+      /* Uttarakhand theme color */
+      color: #fff;
+      padding: 10px 0;
+
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    /* Hero section styles */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      background-image: url('images/Uttarakhand.jpeg');
+      /* Replace with your hero image */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 800px;
+      padding: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .hero-content p {
+      font-size: 24px;
+      color: #fff;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      margin-top: 20px;
+      background-color: #ff4500;
+      /* Adjust button color */
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #ff6b3d;
+      /* Adjust button hover color */
+    }
+
+    /* Optional: Add styles for navigation arrows or indicators */
+    .blog-posts {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: space-between;
+      /* Adjust alignment as needed */
+    }
+
+    .blog-post {
+      flex: 0 0 calc(30% - 20px);
+      /* Adjust width based on the number of columns */
+      max-width: calc(30% - 20px);
+      /* Adjust maximum width based on the number of columns */
+      background-color: #f9f9f9;
+      border-radius: 5px;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    img {
+      width: 20%;
+      height: auto;
+      border-radius: 5px;
+    }
+
+    h3 {
+      font-size: 24px;
+      margin-top: 10px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .read-more-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+
+    /* Latest articles section styles */
+    .latest-articles {
+      padding: 20px;
+    }
+
+    .latest-articles h2 {
+      text-align: center;
+      /* Center the heading */
+    }
+
+
+    /* Styles for the centered popup window */
+    /* Container styles */
+    /* Styles for the centered popup window */
+    .popup-window {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* Semi-transparent background */
+      z-index: 9999;
+    }
+
+    .popup-content {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+      max-width: 80%;
+      text-align: center;
+      position: relative;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      color: #aaa;
+    }
+
+    /* Container styles */
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    /* About section wrapper styles */
+    .about-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    /* About section styles */
+    .about {
+      flex: 1;
+      margin-right: 20px;
+    }
+
+    /* About image styles */
+    .about-image {
+      flex: 1;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    
+
+    /* Categories section styles */
+    .categories {
+      padding: 20px;
+    }
+
+    /* Contact section styles */
+    .contact {
+      padding: 20px;
+    }
+    .contact {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      margin-bottom: 20px;
+    }
+
+    .contact h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .contact-info p {
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+    }
+
+    .contact-info p i {
+      margin-right: 10px;
+    }
+
+    .contact-info p i,
+    .contact-info p span {
+      color: #555;
+    }
+
+    .contact-info p span {
+      font-size: 16px;
+    }
+
+    .contact-message {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .form-container {
+      margin-top: 30px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    .form-group textarea {
+      height: 100px;
+    }
+
+    .submit-btn {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #0056b3;
+    }
+    /* Footer styles */
+    footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Experience the Rich Culture of Uttarakhand</h1>
+        <p>Explore traditions, heritage, and natural beauty</p>
+        <a href="#" class="btn">Discover More</a>
+      </div>
+    </section>
+    <div class="container">
+      <div class="about-wrapper">
+        <section id="about" class="about">
+          <!-- About section with introduction to Uttarakhand's history and culture -->
+          <h2>About Uttarakhand</h2>
+          <p>Uttarakhand, often referred to as the "Land of the Gods," is a state in northern India known for its rich
+            history, diverse culture, and breathtaking landscapes. The state is nestled in the Himalayas, making it a
+            haven for nature lovers, spiritual seekers, and adventure enthusiasts.</p>
+          <p>The history of Uttarakhand dates back centuries, with mentions in ancient texts and scriptures. It is home
+            to several sacred pilgrimage sites, including the Char Dham (four abodes) of Kedarnath, Badrinath, Gangotri,
+            and Yamunotri, attracting millions of devotees and tourists each year.</p>
+          <p>The culture of Uttarakhand is a tapestry of traditions, folk music, dance forms like Choliya and Barada
+            Nati, vibrant festivals such as Uttarakhandi Holi and Nanda Devi Raj Jat, and delicious cuisines like
+            Kafuli, Phaanu, and Chainsoo.</p>
+        </section>
+        <div class="about-image">
+          <img src="images/vector-design-uttarakhandi-family-showing-260nw-362431961.webp" alt="Uttarakhand Image">
+        </div>
+      </div>
+    </div>
+    </div>
+
+    <h2><br>Articles</h2>
+    <section id="latest-articles" class="latest-articles">
+      <!-- Grid layout for latest blog posts related to Uttarakhand's history and culture -->
+      <div class="blog-posts">
+        <div class="blog-post">
+          <img src="images/kedarnath-the-shiva-temple-rudraprayag-uttarakhand-india-free-vector.jpg" alt="Blog Post 1">
+          <h3>Exploring Ancient Temples in Uttarakhand</h3>
+          <p>Let’s delve into the mystical world of ancient temples in Uttarakhand, a land where spirituality and
+            history intertwine. Here’s a glimpse of some remarkable temples waiting to be explored:</p>
+          <div class="additional-content" style="display: none;">
+            <p>1:Kedarnath Temple:
+              Location: Nestled amidst the snow-capped peaks of the Garhwal Himalayas, Kedarnath Temple stands at an
+              elevation of 3,583 meters (11,755 feet).
+              Significance: Dedicated to Lord Shiva, this temple is one of the Char Dham pilgrimage sites. It is
+              believed to be built by the Pandavas from the Mahabharata.
+              Architecture: The stone structure, adorned with intricate carvings, exudes ancient charm. The conical
+              shikhara (spire) stands tall against the backdrop of the majestic mountains.<br><br>
+              2:Badrinath Temple:
+              Location: Situated in the town of Badrinath, this temple lies along the banks of the Alaknanda River.
+              Significance: Dedicated to Lord Vishnu, Badrinath is part of the Char Dham circuit. It is believed to be
+              the abode of Lord Vishnu in his dual form as Nar and Narayan.
+              Architecture: The temple’s vibrant colors, intricate sculptures, and the imposing Neelkanth Peak in the
+              background create a mesmerizing sight.<br><br>
+              3:Gangotri Temple:
+              Location: Perched at an altitude of 3,100 meters (10,200 feet), Gangotri Temple is located in the Garhwal
+              Himalayas.
+              Significance: It is the source of the holy River Ganga (Ganges). According to mythology, Goddess Ganga
+              descended to Earth at this very spot.
+              Architecture: The temple’s white facade against the rugged terrain symbolizes purity. The Bhagirathi River
+              flows nearby, adding to the spiritual aura.<br><br>
+              4:Yamunotri Temple:
+              Location: Yamunotri Temple is situated at an elevation of 3,293 meters (10,804 feet) in the Uttarkashi
+              district.
+              Significance: It marks the origin of the Yamuna River, which is considered the sister of the Ganga.
+              Architecture: The temple’s wooden architecture, surrounded by lush greenery and snow-capped peaks, evokes
+              a sense of serenity.
+              As you explore these temples, you’ll not only witness their architectural marvels but also feel the
+              spiritual energy that has drawn pilgrims and seekers for centuries. 🙏🏔️✨</p>
+          </div>
+          <button class="read-more-btn">Read More</button>
+        </div>
+        <div class="blog-post">
+          <img src="images/images.jpg" alt="Blog Post 2">
+          <h3>The Folk Music and Dance of Uttarakhand</h3>
+          <p>Uttarakhand’s cultural tapestry is woven with threads of ancient traditions, mystical melodies, and vibrant
+            dance forms. Let’s explore the rich heritage of folk music and dance from the Kumaon and Garhwal region</p>
+          <div class="additional-content" style="display: none;">
+            <p>1:Choliya Dance:
+              Origin: Kumaon region.
+              Participants: Male warriors (no female participation).
+              Description: Choliya dance combines music and performance, dating back over a thousand years. Rajputs
+              perform it during marriages. Dancers wield swords and shields, accompanied by drummers (Harijans) and
+              musicians playing Turi and Ransing.
+              Dress Code: Fighters’ costumes, creating a war-like ambiance.<br><br>
+              2:Barada Nati Dance:
+              Location: Dehradun district, Chakrata Tehsil.
+              Participants: Both males and females.
+              Occasion: Religious festivals.
+              Description: A beautiful dance with colorful traditional costumes.
+              Dress Code: Vibrant attire for both men and women.<br><br>
+              3:Jagars Dance:
+              Purpose: A ritual seeking justice from local gods and deities.
+              Participants: Tribe members from Kumaon and Garhwal.
+              Form: A class of spiritual devotion expressed through folk songs.
+              Dress Code: Colorful traditional attire.<br><br>
+              4:Jhora Dance:
+              Type: Community dance.
+              Description: A celebration of unity and joy.
+              Location: Across the state.
+              These dances and songs reflect Uttarakhand’s cultural diversity, connecting people to their roots and the
+              mystical Himalayan landscape. 🌿🏔️✨</p>
+          </div>
+          <button class="read-more-btn">Read More</button>
+        </div>
+        <div class="blog-post">
+          <img src="images/c4a6bcbdc84b04a6e5ae6259ea9bbced.jpg" alt="Blog Post 2">
+          <h3>Cuisines of Uttarakhand</h3>
+          <p>Uttarakhand, with its pristine landscapes and spiritual aura, offers a delightful array of traditional
+            dishes that reflect the state’s rich cultural heritage. Let’s embark on a culinary journey through the
+            Garhwali and Kumaoni cuisines, each brimming with unique flavors:</p>
+          <div class="additional-content" style="display: none;">
+            <p>1:Kafuli:
+              Description: Kafuli is the quintessential Garhwali dish, a celebration of green leafy vegetables. It’s a
+              thick gravy prepared with spinach, fenugreek leaves, and a blend of spices. Often referred to as the State
+              Food of Uttarakhand, Kafuli is served with rice or wheat paste.
+              Rich Source Of: Protein, fiber, vitamins (A, C, E), and essential minerals.<br><br>
+              2:Bhang Ki Chutney:
+              Flavorful Experience: This tangy chutney is made from hemp seeds, cumin seeds, garlic leaves, tamarind,
+              and salt. It adds a burst of flavor to your palate.
+              Location: Commonly enjoyed across Uttarakhand.<br><br>
+              3:Phaanu:
+              Lip-Smacking Delicious: Phaanu is a slow-cooked dish made from soaked and ground lentils. It’s a
+              protein-packed delight seasoned with local spices.
+              Must-Try Dish: Savor it with steamed rice or Indian bread.<br><br>
+              4:Baadi:
+              Traditional Food: Baadi is a simple yet hearty dish made from buckwheat flour. It’s cooked in boiling
+              water and served with ghee.
+              Local Favorite: A staple in many households.<br><br>
+              5:Aloo Tamatar Ka Jhol:
+              Taste And Nutrition: This thin potato and tomato curry is light, flavorful, and nutritious. Perfect for a
+              comforting meal.
+              Pairing: Enjoy it with steamed rice or chapati.<br><br>
+              6:Kandalee Ka Saag:
+              Must-Try Dish: Kandalee saag features green leafy vegetables, often bichhu ghas (stinging nettle). Cooked
+              with mustard oil and spices, it’s both nutritious and flavorful.<br><br>
+              7:Chainsoo:
+              Delicious: Chainsoo is a dish of roasted and ground black gram or kidney beans. It’s cooked with spices
+              and water, resulting in a thick, savory gravy.<br><br>
+              8:Dubuk:
+              Tasty Meal: Dubuk is a protein-rich dish that’s easy on the stomach. It’s made with locally available
+              ingredients and has a comforting taste.
+              Remember, these dishes not only tantalize your taste buds but also connect you to the soul of Uttarakhand.
+              Bon appétit! 🍽️🏔️✨</p>
+          </div>
+          <button class="read-more-btn">Read More</button>
+        </div>
+      </div>
+      </div>
+    </section>
+    </section>
+
+    <section id="categories" class="categories">
+      <!-- Categories section with list of categories specific to Uttarakhand -->
+      <section id="categories" class="categories">
+        <h2>Categories</h2>
+        <ul>
+          <li><a href="https://www.chardhamtour.in/blog/folk-music-uttarakhand/">Uttarakhand Folk Music</a></li>
+          <li><a href="https://www.holidify.com/collections/hill-stations-in-uttarakhand">Hill Stations to visit</a></li>
+          <li><a href="https://traveltriangle.com/blog/temples-in-uttarakhand/">Temples to visit</a></li>
+        </ul>
+      </section>
+    </section>
+        <section id="contact" class="contact">
+          <h2>Contact Us</h2>
+          <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: garimab785@gmail.com</p>
+            <p><i class="fas fa-phone"></i> Phone: +1 234 567 890</p>
+            <p><i class="fas fa-map-marker-alt"></i> Address: Birla Institute Of Applied Sciences, Bhimtal, India</p>
+          </div>
+          <p>If you have any inquiries or feedback, feel free to reach out to us using the contact information provided above.</p>
+        </section>
+        <div class="form-container">
+          <h3>Share an Interesting Fact about Uttarakhand</h3>
+          <form id="factForm" action="#" method="POST">
+            <div class="form-group">
+              <label for="name">Your Name:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your Email:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="fact">Interesting Fact:</label>
+              <textarea id="fact" name="fact" rows="5" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Submit Fact</button>
+          </form>
+        </div>
+      </section>
+        
+      
+    </section>
+  </main>
+
+  <footer>
+    <!-- Footer with navigation links, social media icons, copyright information -->
+    <p>&copy; 2024 Uttarakhand History and Culture Blog. All rights reserved.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+   $(document).ready(function() {
+      $('.read-more-btn').click(function() {
+        $(this).prev('.additional-content').slideToggle();
+        $(this).text(function(_, text) {
+          return text === 'Read More' ? 'Read Less' : 'Read More';
+        });
+      });
+    });
+  </script>
