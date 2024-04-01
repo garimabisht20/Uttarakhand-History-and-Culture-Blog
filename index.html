@@ -18,11 +18,15 @@
 
     /* Header styles */
     header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
       background-color: #3f51b5;
       /* Uttarakhand theme color */
       color: #fff;
       padding: 10px 0;
-
+      z-index: 1000;
     }
 
     nav ul {
@@ -111,7 +115,7 @@
     }
 
     img {
-      width: 20%;
+      width: 45%;
       height: auto;
       border-radius: 5px;
     }
@@ -143,8 +147,8 @@
 
     h2 {
       text-align: center;
+      font-size: 30px;
     }
-
 
     /* Latest articles section styles */
     .latest-articles {
@@ -154,50 +158,6 @@
     .latest-articles h2 {
       text-align: center;
       /* Center the heading */
-    }
-
-
-    /* Styles for the centered popup window */
-    /* Container styles */
-    /* Styles for the centered popup window */
-    .popup-window {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
-      /* Semi-transparent background */
-      z-index: 9999;
-    }
-
-    .popup-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-      max-width: 80%;
-      text-align: center;
-      position: relative;
-    }
-
-    .close-btn {
-      position: absolute;
-      top: 10px;
-      right: 10px;
-      cursor: pointer;
-      font-size: 24px;
-      color: #aaa;
-    }
-
-    /* Container styles */
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
     }
 
     /* About section wrapper styles */
@@ -222,7 +182,6 @@
       border-radius: 5px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
-    
 
     /* Categories section styles */
     .categories {
@@ -233,6 +192,7 @@
     .contact {
       padding: 20px;
     }
+
     .contact {
       background-color: #fff;
       border-radius: 8px;
@@ -269,49 +229,54 @@
       margin-top: 20px;
       font-size: 18px;
     }
-    .form-container {
-      margin-top: 30px;
-    }
 
-    .form-group {
-      margin-bottom: 20px;
-    }
-
-    .form-group label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    .form-group textarea {
-      height: 100px;
-    }
-
-    .submit-btn {
-      background-color: #007bff;
-      color: #fff;
-      border: none;
-      border-radius: 5px;
-      padding: 10px 20px;
-      cursor: pointer;
-    }
-
-    .submit-btn:hover {
-      background-color: #0056b3;
-    }
     /* Footer styles */
     footer {
       background-color: #333;
       color: #fff;
       padding: 20px 0;
       text-align: center;
+    }
+
+    /* Media Queries for Responsive Design */
+    @media only screen and (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 36px;
+      }
+
+      .hero-content p {
+        font-size: 18px;
+      }
+
+      .btn {
+        padding: 8px 16px;
+        margin-top: 16px;
+      }
+
+      .blog-post {
+        flex: 0 0 calc(50% - 20px);
+        max-width: calc(50% - 20px);
+      }
+    }
+
+    @media only screen and (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 24px;
+      }
+
+      .hero-content p {
+        font-size: 16px;
+      }
+
+      .btn {
+        padding: 6px 12px;
+        margin-top: 12px;
+      }
+
+      .blog-post {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
     }
   </style>
 </head>
